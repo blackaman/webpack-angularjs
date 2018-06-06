@@ -16,10 +16,13 @@ module.exports = {
     filename: DEBUG ? '[name].js' : '[name].[hash].js',
     chunkFilename: DEBUG ? '[id].chunk.js' : '[id].[hash].chunk.js'
   },
+  devServer: {
+    disableHostCheck: true
+  },
   module: {
     loaders: [{
       test: /\.(scss|css)$/,
-      loader: ExtractTextPlugin.extract('style-loader', ['css-loader!sass-loader'])
+      loader: ExtractTextPlugin.extract('style-loader', ['css-loader?-autoprefixer!sass-loader!postcss-loader'])
     },
     {
       test: /\.html$/,

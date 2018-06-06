@@ -1,5 +1,6 @@
 import angular from 'angular';
 import confirm from '../../directives/confirm.directive.js';
+import './confirm.scss';
 
 export default angular
   .module('app.c.confirm', [confirm])
